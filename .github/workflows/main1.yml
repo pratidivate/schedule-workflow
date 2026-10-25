@@ -2,14 +2,13 @@ name: schedule job111
 
 on:
   workflow_dispatch:
-   schedule :
-     - cron : "0 0 * * * " 
- 
-    jobs:
-     run-script:
-     runs-on: ubuntu-latest
+  schedule:
+    - cron: "0 0 * * *"
 
-     steps:
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
 
-     -name: print message
-     run : echo "schedule workflow executed"
+    steps:
+      - name: print message
+        run: echo "schedule workflow executed"
